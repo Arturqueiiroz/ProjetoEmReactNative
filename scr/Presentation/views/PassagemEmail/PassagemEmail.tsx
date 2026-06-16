@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Image } from "react-native";
 
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../../../Aula01_App';
+import { RootStackParamList } from '../../../../GPS_App';
 
 import { COLORS } from "../../theme/Apptheme";
 import { RoundedButton } from "../../components/RoundedButton";

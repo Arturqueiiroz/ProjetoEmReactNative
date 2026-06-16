@@ -3,7 +3,7 @@ import { StyleSheet, View, Text,Image, } from "react-native";
 
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
-import { RootStackParamList } from '../../../../Aula01_App';
+import { RootStackParamList } from '../../../../GPS_App';
 
 // Componentes
 import { COLORS } from "../../theme/Apptheme";

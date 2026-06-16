@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, TextInput, Button, ToastAndroid, Platfor
 // Importação dos elementos de navegação
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../../../Aula01_App';
+import { RootStackParamList } from '../../../../GPS_App';
 
 // Componente 
 import { COLORS } from "../../theme/Apptheme";
