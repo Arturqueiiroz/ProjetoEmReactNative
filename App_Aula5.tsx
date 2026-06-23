@@ -1,9 +1,8 @@
-{/* 
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen } from "./src/presentation/views/home/Home";
-import { RegisterScreen } from "./src/presentation/views/Register/Register";
+import { HomeScreen } from "./scr/Presentation/views/home/Home";
+import { RegisterScreen } from "./scr/Presentation/views/register/Regiser";
 
 export type RootStackParamList = {
   Home: undefined;
@@ -37,4 +36,4 @@ const App = () => {
 }
  
 export default App
- */}
+ 
