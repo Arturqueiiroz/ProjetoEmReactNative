@@ -26,3 +26,6 @@ Navigating Between Screens · React Native
 
 # Pacotes para GBS
  npx expo install expo-location
+
+ ## Acesso a Pasta de imagem do dispositivo(ios ou Android)
+ npx expo install expo-image-picker
