@@ -25,7 +25,8 @@ export default function GaleriaScreen(){
         }
 
         // Abre a interface nativa da galeria de fotos do dispositivo
-        const resultado = await ImagePicker.launchImageLibraryAsync({
+        const resultado = await ImagePicker.launchImageLibraryAsync({ // Para usar a galeria
+        // const resultado = await ImagePicker.launchCameraAsync({ // Para acessar a camera, mas teria que criar uma outra logica de camera
             // Filtar para lista apenas arquivos de imagem 'ingora videos'
             mediaTypes: ['images'],
             // Habilita as ferramentas nativas para o usuario cortar/girar a foto
