@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity, Alert, Dimensions, ToastAndroid, Platform } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
-import styles from "../theme/HomeCss";
 
 const { width, height } = Dimensions.get('window');
 
@@ -74,10 +73,10 @@ export default function GaleriaScreen(){
              {/* Botão para limpar a seleção atual */}
              { selectedImage && (
                 <TouchableOpacity
-                    onPress={ () => selectedImage(null) }
-                    style={ styles.bntLimpar, { backgroundColor: '#f00', marginTop:12 }}
+                    onPress={ () => setSectedImage(null) }
+                    style={ [styles.bntLimpar, { backgroundColor: '#f00', marginTop:12 }]}
                 >
-                    <Text style={ styles.textBnt }>Limapr Imagem</Text>
+                    <Text style={ styles.textBtn }>Limpar Imagem</Text>
                 </TouchableOpacity>
              )}
         </View>
@@ -92,7 +91,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
-
     }, 
     title: {
         fontSize: 22,
