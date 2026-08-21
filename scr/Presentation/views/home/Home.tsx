@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text, Image, ToastAndroid, Platform, Alert, TouchableOpacity, ScrollView, KeyboardAvoidingView,
-} from 'react-native';
+import { View, Text, Image, ToastAndroid, Platform, Alert, TouchableOpacity, ScrollView, KeyboardAvoidingView, ActivityIndicator } from 'react-native';
 // Importação dos elementos de navegação
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../../App_Aula5';
+
 
 // Componentes
 import { CustomTextInput } from "../../components/CustomTextInput";
@@ -17,7 +17,7 @@ export const HomeScreen = () => {
 
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
-    const { userEmail, userPassword, onChange, login } = useViewModel();
+    const { userEmail, userPassword, onChange, login, loginBiometrico, loading } = useViewModel();
 
     const testOS = () => {
         if (Platform.OS === 'android') {
@@ -75,6 +75,22 @@ export const HomeScreen = () => {
                                 onPress={() => login()}
                             />
                         </View>
+
+                        {/* Acesso Biométrico (Digital ou Facial) */}
+                        <TouchableOpacity 
+                        style={{ marginTop: 20, alignItems: 'center' }}
+                        onPress={() => loginBiometrico()}
+                        >
+                            <Image
+                                source={require('../../../../assets/img/confirm_password.png')}
+                                style={{ width: 35, height: 35, tintColor: '#E74C3', marginBottom: 5}}
+                            />
+                            <Text
+                            style={{ color: '#E74C3C', fontWeight: 'bold', fontSize: 13}}
+                            >
+                                Entrar com Biometria / FaceId
+                            </Text>
+                        </TouchableOpacity>
 
                         <View style={styles.frmRegistre}>
                             <Text>Crie sua conta!</Text>
