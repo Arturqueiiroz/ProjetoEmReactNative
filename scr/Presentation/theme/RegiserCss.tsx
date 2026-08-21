@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
 
     frm: {
         width: '100%',
-        height: '65%',
+        height: '72%',
         backgroundColor: COLORS.bgColor,
         position: 'absolute',
         bottom: 0,

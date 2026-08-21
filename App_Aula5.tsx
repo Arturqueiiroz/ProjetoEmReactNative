@@ -3,13 +3,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from "./scr/Presentation/views/home/Home";
 import { RegisterScreen } from "./scr/Presentation/views/register/Regiser";
+import { RecuperarSenhaScreen } from "./scr/Presentation/views/PassagemEmail/PassagemEmail";
+import { AlterarSenhaScreen } from "./scr/Presentation/views/AlterarSenha/AlterarSenha";
 
 export type RootStackParamList = {
-  Home: undefined;
-  Register: undefined;
+  HomeScreen: undefined;
+  RegisterScreen: undefined;
+  PassagemEmail: undefined;
+  AlterarSenha: undefined;
 }
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
 
@@ -19,15 +23,31 @@ const App = () => {
         headerShown: false
       }}>
         <Stack.Screen
-          name='Home'
+          name='HomeScreen'
           component={HomeScreen}
         />
         <Stack.Screen
-          name='Register'
+          name='RegisterScreen'
           component={RegisterScreen}
           options={{
             headerShown: true,
             title: 'Novo usuário',
+          }}
+        />
+        <Stack.Screen
+          name='PassagemEmail'
+          component={RecuperarSenhaScreen}
+          options={{
+            headerShown: true,
+            title: 'Recuperar senha',
+          }}
+        />
+        <Stack.Screen
+          name='AlterarSenha'
+          component={AlterarSenhaScreen}
+          options={{
+            headerShown: true,
+            title: 'Alterar senha',
           }}
         />
       </Stack.Navigator>
@@ -36,4 +56,3 @@ const App = () => {
 }
  
 export default App
- 

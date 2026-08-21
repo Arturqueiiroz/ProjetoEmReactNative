@@ -3,7 +3,7 @@ import {
     StyleSheet, View, Text, Image, TextInput, Platform, ToastAndroid, Alert} from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../../../GPS_App';
+import { RootStackParamList } from '../../../../App_Aula5';
 
 //Componentes
 import styles from "../../theme/RegiserCss";
@@ -14,7 +14,7 @@ import RegiserViewModel from './ViewModel';
 
 export const RegisterScreen = () => {
         const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
-        const { userEmail, userPassword, userName, userPhone, userConfirmPassword, onChange, cadastro } = RegiserViewModel();
+        const { userEmail, userPassword, userName, userDisplayName, userPhone, userConfirmPassword, onChange, register } = RegiserViewModel();
     
     const testOS = () => {
         if (Platform.OS === 'android') {
@@ -63,6 +63,16 @@ export const RegisterScreen = () => {
             />
 
             <CustomTextInput
+                image={require('../../../../assets/img/user.png')}
+                placeholder="Como você quer ser chamado?"
+                keyboardType="default"
+                secureTextEntry={false}
+                property="userDisplayName"
+                onChangeText={onChange}
+                value={userDisplayName}
+            />
+
+            <CustomTextInput
                 image={require('../../../../assets/img/email.png')}
                 placeholder="Digite seu Email"
                 keyboardType="email-address"
@@ -105,7 +115,7 @@ export const RegisterScreen = () => {
                 <View style={{ marginTop: 10 }}>
                     <RoundedButton
                         text='Entrar'
-                        onPress={ () => cadastro() }
+                        onPress={ () => register() }
                     //onPress={() => ToastAndroid.show('Teste de Login!', ToastAndroid.SHORT)} 
                     />
                 </View>
